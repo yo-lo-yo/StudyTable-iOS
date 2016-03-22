@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,27 +18,84 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-tw-zro">
-                                <rect key="frame" x="20" y="28" width="304" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBr-SG-aYb" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="105" y="101" width="390" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to StudyTable!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-tw-zro">
+                                <rect key="frame" x="20" y="40" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBr-SG-aYb" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="20" y="57" width="227" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="EBr-SG-aYb" secondAttribute="trailing" constant="333" id="6V1-sG-V4t"/>
+                            <constraint firstItem="EBr-SG-aYb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6fb-vn-dvi"/>
+                            <constraint firstItem="EBr-SG-aYb" firstAttribute="top" secondItem="g3b-tw-zro" secondAttribute="bottom" constant="40" id="AHr-el-BYC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EBr-SG-aYb" secondAttribute="trailing" constant="85" id="JXp-ai-cUZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g3b-tw-zro" secondAttribute="trailing" id="LEP-dR-VAe"/>
+                            <constraint firstItem="EBr-SG-aYb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="85" id="MeT-Ur-Xpd"/>
+                            <constraint firstItem="g3b-tw-zro" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QlA-ex-TQI"/>
+                            <constraint firstItem="g3b-tw-zro" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Qn1-Lq-90p"/>
+                            <constraint firstItem="g3b-tw-zro" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="USm-aP-6bJ"/>
+                            <constraint firstItem="g3b-tw-zro" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bEB-Gx-kN6"/>
+                            <constraint firstItem="EBr-SG-aYb" firstAttribute="top" secondItem="g3b-tw-zro" secondAttribute="bottom" constant="8" id="izQ-UC-jms"/>
+                            <constraint firstItem="g3b-tw-zro" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zVL-bK-xG3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="LEP-dR-VAe"/>
+                                <exclude reference="QlA-ex-TQI"/>
+                                <exclude reference="Qn1-Lq-90p"/>
+                                <exclude reference="6V1-sG-V4t"/>
+                                <exclude reference="6fb-vn-dvi"/>
+                                <exclude reference="izQ-UC-jms"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="fbButton" destination="EBr-SG-aYb" id="7ln-UH-Q3B"/>
-                        <outlet property="name" destination="g3b-tw-zro" id="GeK-Xq-xkd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="338" y="479"/>
+            <point key="canvasLocation" x="-614" y="381"/>
+        </scene>
+        <!--User Landing View Controller-->
+        <scene sceneID="KrM-pa-9JI">
+            <objects>
+                <viewController storyboardIdentifier="UserLandingVC" id="hNz-lI-fdt" customClass="UserLandingViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5IC-iR-9m4"/>
+                        <viewControllerLayoutGuide type="bottom" id="WYy-q3-nSB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0mJ-Vl-cXZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iNM-96-gs2">
+                                <rect key="frame" x="20" y="41" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iNM-96-gs2" firstAttribute="trailing" secondItem="0mJ-Vl-cXZ" secondAttribute="trailingMargin" id="3BE-9M-J58"/>
+                            <constraint firstItem="iNM-96-gs2" firstAttribute="top" secondItem="5IC-iR-9m4" secondAttribute="bottom" constant="21" id="D1E-bQ-VdF"/>
+                            <constraint firstItem="iNM-96-gs2" firstAttribute="leading" secondItem="0mJ-Vl-cXZ" secondAttribute="leadingMargin" id="vPD-HD-GW3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="user" destination="iNM-96-gs2" id="6uF-Uk-xWp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kyt-Fc-ssL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="90" y="384"/>
         </scene>
     </scenes>
 </document>
