@@ -63,8 +63,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 self.performSegueWithIdentifier("loggedIn", sender: self)
             } else {
-                print("getUserData:")
-                print(error.description)
                 self.name = "Unable to retrieve name"
                 self.id = "Unable to retrieve id"
             }
