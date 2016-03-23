@@ -46,11 +46,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginManager.logOut()
     }
     
-    func presentUserViewController() {
-        let userController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("UserLandingVC") as! UserLandingViewController
-        userController.name = self.name
-        print("presentUserViewController")
-        presentViewController(userController, animated: true, completion: nil)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let tabBarVC = segue.destinationViewController as! UITabBarController
+        let hoursLoggedVC = tabBarVC.viewControllers![0] as! HourLoggingViewController
+        hoursLoggedVC.name = self.name
     }
     
     func getUserData() {
@@ -61,7 +60,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 self.name = name
                 self.id = id
-                self.presentUserViewController()
+                
+                self.performSegueWithIdentifier("loggedIn", sender: self)
             } else {
                 print("getUserData:")
                 print(error.description)
