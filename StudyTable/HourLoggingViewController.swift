@@ -13,7 +13,7 @@ class HourLoggingViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet weak var user: UILabel!
-    var name: String = ""
+    var userName: String = ""
     var pickerData:[String] = []
     var selectedHours = ""
     
@@ -21,7 +21,7 @@ class HourLoggingViewController: UIViewController, UIPickerViewDelegate, UIPicke
         super.viewDidLoad()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
-        user.text = ("Hi, ") + name
+        user.text = ("Hi, ") + userName
         
         for x in 0..<24 {
             pickerData.insert("\(x+1) Hours", atIndex: x)

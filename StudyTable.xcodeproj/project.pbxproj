@@ -20,6 +20,8 @@
 		1C045ADC1C991518008D6223 /* StudyTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045ADB1C991518008D6223 /* StudyTableTests.swift */; };
 		1C045AE71C991518008D6223 /* StudyTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AE61C991518008D6223 /* StudyTableUITests.swift */; };
 		1C045B0F1C9B77C3008D6223 /* HourLoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */; };
+		1C529F611CA3681B005A51B8 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C529F601CA3681B005A51B8 /* GroupViewController.swift */; };
+		1C529F631CA36D92005A51B8 /* RegisterGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		1C045AE61C991518008D6223 /* StudyTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableUITests.swift; sourceTree = "<group>"; };
 		1C045AE81C991518008D6223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourLoggingViewController.swift; sourceTree = "<group>"; };
+		1C529F601CA3681B005A51B8 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterGroupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				1C045AC61C991518008D6223 /* AppDelegate.swift */,
 				1C045AC81C991518008D6223 /* LoginViewController.swift */,
 				1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */,
+				1C529F601CA3681B005A51B8 /* GroupViewController.swift */,
+				1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */,
 				1C045ACA1C991518008D6223 /* Main.storyboard */,
 				1C045ACD1C991518008D6223 /* Assets.xcassets */,
 				1C045ACF1C991518008D6223 /* LaunchScreen.storyboard */,
@@ -287,9 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C529F611CA3681B005A51B8 /* GroupViewController.swift in Sources */,
 				1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */,
 				1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */,
 				1C045B0F1C9B77C3008D6223 /* HourLoggingViewController.swift in Sources */,
+				1C529F631CA36D92005A51B8 /* RegisterGroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
