@@ -12,6 +12,8 @@
 		17D387F61CA1F93800CF6144 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D387F51CA1F93800CF6144 /* FBSDKLoginKit.framework */; };
 		17D387F81CA1F94300CF6144 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17D387F71CA1F94300CF6144 /* FBSDKShareKit.framework */; };
 		17D387FA1CA1F97000CF6144 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17D387F91CA1F96F00CF6144 /* FacebookSDKStrings.bundle */; };
+		17D387FC1CA61B5100CF6144 /* GroupSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */; };
+		17D387FE1CA61C2D00CF6144 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */; };
 		1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC61C991518008D6223 /* AppDelegate.swift */; };
 		1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC81C991518008D6223 /* LoginViewController.swift */; };
 		1C045ACC1C991518008D6223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACA1C991518008D6223 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		17D387F51CA1F93800CF6144 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "FacebookSDKs-iOS-20160316/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
 		17D387F71CA1F94300CF6144 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "FacebookSDKs-iOS-20160316/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		17D387F91CA1F96F00CF6144 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKStrings.bundle; path = "FacebookSDKs-iOS-20160316/FacebookSDKStrings.bundle"; sourceTree = "<group>"; };
+		17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSearchResultsViewController.swift; sourceTree = "<group>"; };
+		17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		1C045AC31C991518008D6223 /* StudyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C045AC61C991518008D6223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C045AC81C991518008D6223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -123,10 +127,12 @@
 				1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */,
 				1C529F601CA3681B005A51B8 /* GroupViewController.swift */,
 				1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */,
+				17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */,
 				1C045ACA1C991518008D6223 /* Main.storyboard */,
 				1C045ACD1C991518008D6223 /* Assets.xcassets */,
 				1C045ACF1C991518008D6223 /* LaunchScreen.storyboard */,
 				1C045AD21C991518008D6223 /* Info.plist */,
+				17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */,
 			);
 			path = StudyTable;
 			sourceTree = "<group>";
@@ -293,9 +299,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D387FE1CA61C2D00CF6144 /* GroupTableViewCell.swift in Sources */,
 				1C529F611CA3681B005A51B8 /* GroupViewController.swift in Sources */,
 				1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */,
 				1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */,
+				17D387FC1CA61B5100CF6144 /* GroupSearchResultsViewController.swift in Sources */,
 				1C045B0F1C9B77C3008D6223 /* HourLoggingViewController.swift in Sources */,
 				1C529F631CA36D92005A51B8 /* RegisterGroupViewController.swift in Sources */,
 			);

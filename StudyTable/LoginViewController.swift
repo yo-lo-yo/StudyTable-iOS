@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var fbButton: FBSDKLoginButton!
     var id = "id"
     var name = "name"
-    var group: String?
+    var group: String = "abc"
     var groupImage: UIImage?
     
     override func viewDidLoad() {
@@ -51,10 +51,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "viewHourLogger") {
             let tabBarVC = segue.destinationViewController as! UITabBarController
+            tabBarVC.tabBar.barTintColor = UIColor.cyanColor()
             let hoursLoggedVC = tabBarVC.viewControllers![0] as! HourLoggingViewController
             hoursLoggedVC.userName = self.name
         } else if(segue.identifier == "registerGroup") {
-            print("in group segue")
             let registerGroupVC = segue.destinationViewController as! RegisterGroupViewController
             registerGroupVC.userName = self.name
         } else {
@@ -77,12 +77,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func getUserAccount() {
         //API call to get user data/groups
-        if(nil == group) {
+        if(group.isEmpty) {
             self.performSegueWithIdentifier("registerGroup", sender: self)
-            print("group segue")
         } else {
             self.performSegueWithIdentifier("viewHourLogger", sender: self)
-            print("hour segue")
         }
     }
 

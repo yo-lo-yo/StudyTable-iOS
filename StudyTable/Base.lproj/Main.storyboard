@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="-615" y="371"/>
         </scene>
-        <!--Register Group View Controller-->
+        <!--Search Results-->
         <scene sceneID="e6I-C6-VtW">
             <objects>
-                <viewController id="8wC-MJ-9Gs" customClass="RegisterGroupViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Search Results" id="8wC-MJ-9Gs" customClass="RegisterGroupViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HaY-3g-7iR"/>
                         <viewControllerLayoutGuide type="bottom" id="Vhl-Eh-Ro7"/>
@@ -150,7 +150,7 @@
                                     <constraint firstAttribute="height" constant="30" id="nkD-K3-ToM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="1XK-IT-jWK"/>
@@ -181,7 +181,7 @@
                                 </constraints>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="vaL-BN-hOi" kind="show" id="UHa-NJ-NqP"/>
+                                    <action selector="search:" destination="8wC-MJ-9Gs" eventType="touchUpInside" id="ctv-OT-HrY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8t-Ht-uAW">
@@ -192,8 +192,9 @@
                                 </constraints>
                                 <state key="normal" title="Create New Group"/>
                                 <connections>
+                                    <action selector="createNewGroup:" destination="8wC-MJ-9Gs" eventType="touchUpInside" id="Ken-LC-92Q"/>
                                     <action selector="searchForGroup:" destination="8wC-MJ-9Gs" eventType="touchUpInside" id="xnn-PV-7J2"/>
-                                    <segue destination="mCN-5k-QEc" kind="show" id="zSv-5V-B0b"/>
+                                    <segue destination="mCN-5k-QEc" kind="show" identifier="createGroup" id="zSv-5V-B0b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,7 +214,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchInput" destination="4JJ-tc-FTg" id="atE-Dk-guP"/>
                         <outlet property="userNameLabel" destination="4Y6-eh-GkT" id="pnI-dU-OZ4"/>
+                        <segue destination="fkh-Pq-dGz" kind="show" identifier="searchGroups" id="0qu-nw-xp6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc7-hG-egX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -236,25 +239,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh4-z7-qps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1252" y="1857"/>
+            <point key="canvasLocation" x="-1290" y="1869"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="wft-0y-sQi">
+        <!--Root View Controller-->
+        <scene sceneID="3B7-hX-XzM">
             <objects>
-                <viewController id="vaL-BN-hOi" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ujh-bU-wxP"/>
-                        <viewControllerLayoutGuide type="bottom" id="qC0-99-31Q"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gWh-eZ-dEm">
+                <tableViewController id="4EG-4U-m4v" customClass="GroupSearchResultsViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="yDs-24-CXx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="deC-GI-gqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupTableViewCell" rowHeight="106" id="3G8-LZ-Bed" customClass="GroupTableViewCell" customModule="StudyTable" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="106"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3G8-LZ-Bed" id="xS9-Nh-kFQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="105"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="IGP-z3-84g">
+                                            <rect key="frame" x="8" y="-2" width="90" height="90"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhH-Wn-vPY">
+                                            <rect key="frame" x="129" y="32" width="463" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="groupImage" destination="IGP-z3-84g" id="EoK-s2-9Ze"/>
+                                    <outlet property="groupNameLabel" destination="QhH-Wn-vPY" id="9Tz-d6-pl6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="4EG-4U-m4v" id="YPx-b3-KXH"/>
+                            <outlet property="delegate" destination="4EG-4U-m4v" id="Xju-Lf-PRI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="JCg-Jv-keP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkA-D9-fv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-615" y="1857"/>
+            <point key="canvasLocation" x="82" y="1869"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UmT-It-PTN">
+            <objects>
+                <navigationController id="fkh-Pq-dGz" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tsl-RD-5h1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4EG-4U-m4v" kind="relationship" relationship="rootViewController" id="TA3-2B-REr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2yQ-OM-dEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-615" y="1869"/>
         </scene>
         <!--Group-->
         <scene sceneID="877-7b-KKO">
@@ -517,4 +562,7 @@
             <point key="canvasLocation" x="800" y="39"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="default" width="90" height="90"/>
+    </resources>
 </document>
