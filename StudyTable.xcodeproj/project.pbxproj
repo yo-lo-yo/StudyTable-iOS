@@ -18,7 +18,6 @@
 		1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC81C991518008D6223 /* LoginViewController.swift */; };
 		1C045ACC1C991518008D6223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACA1C991518008D6223 /* Main.storyboard */; };
 		1C045ACE1C991518008D6223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACD1C991518008D6223 /* Assets.xcassets */; };
-		1C045AD11C991518008D6223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACF1C991518008D6223 /* LaunchScreen.storyboard */; };
 		1C045ADC1C991518008D6223 /* StudyTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045ADB1C991518008D6223 /* StudyTableTests.swift */; };
 		1C045AE71C991518008D6223 /* StudyTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AE61C991518008D6223 /* StudyTableUITests.swift */; };
 		1C045B0F1C9B77C3008D6223 /* HourLoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */; };
@@ -56,7 +55,6 @@
 		1C045AC81C991518008D6223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1C045ACB1C991518008D6223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1C045ACD1C991518008D6223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C045AD01C991518008D6223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C045AD21C991518008D6223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C045AD71C991518008D6223 /* StudyTableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyTableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C045ADB1C991518008D6223 /* StudyTableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableTests.swift; sourceTree = "<group>"; };
@@ -130,7 +128,6 @@
 				17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */,
 				1C045ACA1C991518008D6223 /* Main.storyboard */,
 				1C045ACD1C991518008D6223 /* Assets.xcassets */,
-				1C045ACF1C991518008D6223 /* LaunchScreen.storyboard */,
 				1C045AD21C991518008D6223 /* Info.plist */,
 				17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */,
 			);
@@ -271,7 +268,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C045AD11C991518008D6223 /* LaunchScreen.storyboard in Resources */,
 				17D387FA1CA1F97000CF6144 /* FacebookSDKStrings.bundle in Resources */,
 				1C045ACE1C991518008D6223 /* Assets.xcassets in Resources */,
 				1C045ACC1C991518008D6223 /* Main.storyboard in Resources */,
@@ -347,14 +343,6 @@
 				1C045ACB1C991518008D6223 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		1C045ACF1C991518008D6223 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C045AD01C991518008D6223 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

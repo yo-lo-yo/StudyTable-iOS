@@ -18,26 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBr-SG-aYb" customClass="FBSDKLoginButton">
-                                <rect key="frame" x="105" y="101" width="390" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="1OI-l2-3xq"/>
-                                    <constraint firstAttribute="width" constant="390" id="Rxb-3g-RJf"/>
-                                    <constraint firstAttribute="width" constant="390" id="ZV5-Ne-FXu"/>
-                                    <constraint firstAttribute="height" constant="30" id="bgC-2Y-UtK"/>
-                                    <constraint firstAttribute="width" constant="390" id="w6h-T3-3fw"/>
-                                    <constraint firstAttribute="height" constant="30" id="yH6-fk-xs7"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1OI-l2-3xq"/>
-                                        <exclude reference="Rxb-3g-RJf"/>
-                                        <exclude reference="ZV5-Ne-FXu"/>
-                                        <exclude reference="bgC-2Y-UtK"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to StudyTable!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3b-tw-zro">
                                 <rect key="frame" x="202" y="40" width="197" height="21"/>
                                 <constraints>
@@ -60,11 +40,37 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EBr-SG-aYb" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="178" y="99" width="244" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1OI-l2-3xq"/>
+                                    <constraint firstAttribute="width" constant="390" id="Rxb-3g-RJf"/>
+                                    <constraint firstAttribute="width" constant="390" id="ZV5-Ne-FXu"/>
+                                    <constraint firstAttribute="height" constant="30" id="bgC-2Y-UtK"/>
+                                    <constraint firstAttribute="width" constant="244" id="e9E-Or-G8T"/>
+                                    <constraint firstAttribute="height" constant="30" id="n3e-Rz-JfE"/>
+                                    <constraint firstAttribute="width" constant="390" id="w6h-T3-3fw"/>
+                                    <constraint firstAttribute="height" constant="30" id="yH6-fk-xs7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1OI-l2-3xq"/>
+                                        <exclude reference="Rxb-3g-RJf"/>
+                                        <exclude reference="ZV5-Ne-FXu"/>
+                                        <exclude reference="bgC-2Y-UtK"/>
+                                        <exclude reference="w6h-T3-3fw"/>
+                                        <exclude reference="yH6-fk-xs7"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EBr-SG-aYb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3oe-O4-CQQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EBr-SG-aYb" secondAttribute="trailing" constant="333" id="6V1-sG-V4t"/>
                             <constraint firstItem="EBr-SG-aYb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6fb-vn-dvi"/>
+                            <constraint firstItem="EBr-SG-aYb" firstAttribute="top" secondItem="g3b-tw-zro" secondAttribute="bottom" constant="38" id="8MT-4C-wDQ"/>
                             <constraint firstItem="EBr-SG-aYb" firstAttribute="top" secondItem="g3b-tw-zro" secondAttribute="bottom" constant="40" id="AHr-el-BYC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g3b-tw-zro" secondAttribute="trailing" constant="181" id="Ccd-S2-twz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EBr-SG-aYb" secondAttribute="trailing" constant="85" id="JXp-ai-cUZ"/>
@@ -97,6 +103,8 @@
                                 <exclude reference="JwK-Lo-TxA"/>
                                 <exclude reference="MeT-Ur-Xpd"/>
                                 <exclude reference="izQ-UC-jms"/>
+                                <exclude reference="m9s-an-iAz"/>
+                                <exclude reference="oCm-Cb-rfd"/>
                                 <exclude reference="s2m-5a-449"/>
                                 <exclude reference="tun-pQ-lPV"/>
                                 <exclude reference="vS5-AO-4pR"/>
@@ -116,7 +124,7 @@
                     <connections>
                         <outlet property="fbButton" destination="EBr-SG-aYb" id="7ln-UH-Q3B"/>
                         <segue destination="RhO-F4-R6O" kind="show" identifier="viewHourLogger" id="7ep-Io-QLP"/>
-                        <segue destination="8wC-MJ-9Gs" kind="show" identifier="registerGroup" id="MqZ-gU-ayz"/>
+                        <segue destination="fkh-Pq-dGz" kind="show" identifier="registerGroup" id="2fu-Lv-wKM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -135,7 +143,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y6-eh-GkT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y6-eh-GkT">
                                 <rect key="frame" x="20" y="47" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -173,7 +181,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-rU-PGt">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-rU-PGt">
                                 <rect key="frame" x="270" y="206" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Pvn-or-5wo"/>
@@ -194,7 +202,6 @@
                                 <connections>
                                     <action selector="createNewGroup:" destination="8wC-MJ-9Gs" eventType="touchUpInside" id="Ken-LC-92Q"/>
                                     <action selector="searchForGroup:" destination="8wC-MJ-9Gs" eventType="touchUpInside" id="xnn-PV-7J2"/>
-                                    <segue destination="mCN-5k-QEc" kind="show" identifier="createGroup" id="zSv-5V-B0b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,15 +220,16 @@
                             <constraint firstItem="lSj-rU-PGt" firstAttribute="centerX" secondItem="IBq-9w-6hU" secondAttribute="centerX" id="z6H-mI-1ln"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="sUl-VD-OjJ"/>
                     <connections>
                         <outlet property="searchInput" destination="4JJ-tc-FTg" id="atE-Dk-guP"/>
                         <outlet property="userNameLabel" destination="4Y6-eh-GkT" id="pnI-dU-OZ4"/>
-                        <segue destination="fkh-Pq-dGz" kind="show" identifier="searchGroups" id="0qu-nw-xp6"/>
+                        <segue destination="4EG-4U-m4v" kind="show" identifier="searchGroups" id="AvB-bD-31N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc7-hG-egX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-615" y="1111"/>
+            <point key="canvasLocation" x="-615" y="1869"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9t7-pu-Xyz">
@@ -294,12 +302,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="4EG-4U-m4v" kind="relationship" relationship="rootViewController" id="TA3-2B-REr"/>
+                        <segue destination="8wC-MJ-9Gs" kind="relationship" relationship="rootViewController" id="Uu7-VG-MlU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yQ-OM-dEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-615" y="1869"/>
+            <point key="canvasLocation" x="-615" y="1111"/>
         </scene>
         <!--Group-->
         <scene sceneID="877-7b-KKO">

@@ -25,6 +25,7 @@ class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         userNameLabel.text = "Let's get you registered \(userName!)"
         searchInput.delegate = self
+        navigationItem.title = "Register Group"
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -50,9 +51,7 @@ class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
         if("createGroup" == segue.identifier) {
             
         } else if("searchGroups" == segue.identifier) {
-            let navVC = segue.destinationViewController as! UINavigationController
-            navVC.navigationBar.barTintColor = UIColor.orangeColor()
-            let groupSearchResultsVC = navVC.topViewController as! GroupSearchResultsViewController
+            let groupSearchResultsVC = segue.destinationViewController as! GroupSearchResultsViewController
             getGroupsFromAPI()
             groupSearchResultsVC.groups = self.groups
         }

@@ -16,13 +16,17 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var fbButton: FBSDKLoginButton!
     var id = "id"
     var name = "name"
-    var group: String = "abc"
+    var group: String = ""
     var groupImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fbButton.readPermissions = ["public_profile",  "email", "user_friends"]
         fbButton.delegate = self
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
         if(nil != FBSDKAccessToken.currentAccessToken()) {
             fbButton.hidden = true
@@ -55,7 +59,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             let hoursLoggedVC = tabBarVC.viewControllers![0] as! HourLoggingViewController
             hoursLoggedVC.userName = self.name
         } else if(segue.identifier == "registerGroup") {
-            let registerGroupVC = segue.destinationViewController as! RegisterGroupViewController
+            let navBarVC = segue.destinationViewController as! UINavigationController
+            navBarVC.navigationBar.barTintColor = UIColor.orangeColor()
+            let registerGroupVC = navBarVC.topViewController as! RegisterGroupViewController
             registerGroupVC.userName = self.name
         } else {
             print("can't id segue" + segue.identifier!)
