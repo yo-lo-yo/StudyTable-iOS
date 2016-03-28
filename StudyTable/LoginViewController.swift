@@ -69,9 +69,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func getFacebookUserData() {
-        FBSDKGraphRequest.init(graphPath: "me", parameters: nil).startWithCompletionHandler { (connection, result, error) -> Void in
+        FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, first_name, last_name, email"]).startWithCompletionHandler { (connection, result, error) -> Void in
             if(error == nil) {
-                self.name = (result.objectForKey("name") as? String)!
+                self.name = (result.objectForKey("first_name") as? String)!
                 self.id = (result.objectForKey("id") as? String)!
                 self.getUserAccount()
             } else {
@@ -83,6 +83,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func getUserAccount() {
         //API call to get user data/groups
+        //if user == nil, create user
         if(group.isEmpty) {
             self.performSegueWithIdentifier("registerGroup", sender: self)
         } else {
