@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var fbButton: FBSDKLoginButton!
     var id = "id"
     var name = "name"
-    var group: String = ""
+    var group: String = "asd"
     var groupImage: UIImage?
     
     override func viewDidLoad() {
@@ -53,11 +53,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "viewHourLogger") {
+        if(segue.identifier == "landingScene") {
             let tabBarVC = segue.destinationViewController as! UITabBarController
-            tabBarVC.tabBar.barTintColor = UIColor.cyanColor()
-            let hoursLoggedVC = tabBarVC.viewControllers![0] as! HourLoggingViewController
-            hoursLoggedVC.userName = self.name
+            tabBarVC.tabBar.barTintColor = UIColor.lightGrayColor()
+            let hoursNavVC = tabBarVC.viewControllers![0] as! UINavigationController
+            hoursNavVC.navigationBar.barTintColor = UIColor.lightGrayColor()
+            let loggedHoursVC = hoursNavVC.viewControllers[0] as! LoggedHoursViewController
+            loggedHoursVC.name = self.name
         } else if(segue.identifier == "registerGroup") {
             let navBarVC = segue.destinationViewController as! UINavigationController
             navBarVC.navigationBar.barTintColor = UIColor.orangeColor()
@@ -87,7 +89,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if(group.isEmpty) {
             self.performSegueWithIdentifier("registerGroup", sender: self)
         } else {
-            self.performSegueWithIdentifier("viewHourLogger", sender: self)
+            self.performSegueWithIdentifier("landingScene", sender: self)
         }
     }
 

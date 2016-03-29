@@ -15,16 +15,16 @@ class HourLoggingViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var user: UILabel!
     var userName: String = ""
     var pickerData:[String] = []
-    var selectedHours = ""
+    var selectedHours = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         user.text = ("Hi, ") + userName
-        
+        navigationItem.title = "Log"
         for x in 0..<24 {
-            pickerData.insert("\(x+1) Hours", atIndex: x)
+            pickerData.insert("\(x+1)", atIndex: x)
         }
     }
     
@@ -49,6 +49,13 @@ class HourLoggingViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     @IBAction func logHours(sender: AnyObject) {
+        let alert = UIAlertController(title: nil, message: "Log \(selectedHours) Hours?", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "Log", style: .Default, handler: sendLoggedHours))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func sendLoggedHours(action: UIAlertAction) {
         print(selectedHours)
     }
     
