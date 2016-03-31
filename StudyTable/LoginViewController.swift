@@ -14,10 +14,9 @@ import FBSDKCoreKit
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var fbButton: FBSDKLoginButton!
-    var id = "id"
-    var name = "name"
-    var group: String = "asd"
-    var groupImage: UIImage?
+    let defaults = NSUserDefaults.standardUserDefaults()
+    var user: User?
+    var groups: [Group]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,13 +57,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             tabBarVC.tabBar.barTintColor = UIColor.lightGrayColor()
             let hoursNavVC = tabBarVC.viewControllers![0] as! UINavigationController
             hoursNavVC.navigationBar.barTintColor = UIColor.lightGrayColor()
-            let loggedHoursVC = hoursNavVC.viewControllers[0] as! LoggedHoursViewController
-            loggedHoursVC.name = self.name
+
+
         } else if(segue.identifier == "registerGroup") {
-            let navBarVC = segue.destinationViewController as! UINavigationController
-            navBarVC.navigationBar.barTintColor = UIColor.orangeColor()
-            let registerGroupVC = navBarVC.topViewController as! RegisterGroupViewController
-            registerGroupVC.userName = self.name
+        
         } else {
             print("can't id segue" + segue.identifier!)
         }
@@ -73,12 +69,18 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func getFacebookUserData() {
         FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, first_name, last_name, email"]).startWithCompletionHandler { (connection, result, error) -> Void in
             if(error == nil) {
-                self.name = (result.objectForKey("first_name") as? String)!
-                self.id = (result.objectForKey("id") as? String)!
+                let firstName = (result.objectForKey("first_name") as! String)
+                let lastName = (result.objectForKey("last_name") as! String)
+                let id = (result.objectForKey("id") as! String)
+                let email = (result.objectForKey("email") as! String)
+                self.user = User(id: id, first_name: firstName, last_name: lastName, email: email)
+                
+                let encodedUser = NSKeyedArchiver.archivedDataWithRootObject(self.user!)
+                (self.defaults.setObject(encodedUser, forKey: "user"))
+                
                 self.getUserAccount()
             } else {
-                self.name = "Unable to retrieve name"
-                self.id = "Unable to retrieve id"
+                print("Unable to retrieve user")
             }
         }
     }
@@ -86,7 +88,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     func getUserAccount() {
         //API call to get user data/groups
         //if user == nil, create user
-        if(group.isEmpty) {
+        
+        groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
+        
+        if nil == groups {
+            let encodedGroup = NSKeyedArchiver.archivedDataWithRootObject(groups!)
+            defaults.setObject(encodedGroup, forKey: "groups")
+            
             self.performSegueWithIdentifier("registerGroup", sender: self)
         } else {
             self.performSegueWithIdentifier("landingScene", sender: self)

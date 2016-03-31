@@ -10,19 +10,20 @@ import UIKit
 
 class ListedGroupsTableViewController: UITableViewController {
 
-    var groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
-    
+    var groups: [Group]?
     var selectedGroup: Group?
-
     let cellIdentifier = "GroupTableViewCell"
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let storedGroups = defaults.objectForKey("groups") as? NSData {
+            groups = NSKeyedUnarchiver.unarchiveObjectWithData(storedGroups) as? [Group]
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
@@ -34,19 +35,19 @@ class ListedGroupsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groups.count
+        return groups!.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GroupTableViewCell
-        cell.groupNameLabel.text = groups[indexPath.row].name
-        cell.groupImage.image = groups[indexPath.row].image
+        cell.groupNameLabel.text = groups![indexPath.row].name
+        cell.groupImage.image = groups![indexPath.row].image
 
         return cell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedGroup = groups[indexPath.row]
+        selectedGroup = groups![indexPath.row]
         performSegueWithIdentifier("viewSelectedGroup", sender: self)
     }
 
@@ -60,7 +61,6 @@ class ListedGroupsTableViewController: UITableViewController {
                 groupVC.inputGroupImage = group.image
                 groupVC.groupMemberNames = group.members
                 groupVC.inputGroupName = group.name
-                print(group.members)
             }
         }
     }

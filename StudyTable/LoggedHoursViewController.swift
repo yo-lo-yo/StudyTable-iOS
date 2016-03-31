@@ -12,9 +12,12 @@ class LoggedHoursViewController: UIViewController {
 
     var name: String?
     
+    override func viewWillAppear(animated: Bool) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -25,15 +28,6 @@ class LoggedHoursViewController: UIViewController {
     
     @IBAction func logButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("logHours", sender: self)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if("logHours" == segue.identifier) {
-            let hourLoggingVC = segue.destinationViewController as! HourLoggingViewController
-            if let user = self.name {
-                hourLoggingVC.userName = user
-            }
-        }
     }
 
     /*

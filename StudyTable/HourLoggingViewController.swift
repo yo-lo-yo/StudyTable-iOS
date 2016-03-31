@@ -12,20 +12,27 @@ import UIKit
 class HourLoggingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     @IBOutlet var pickerView: UIPickerView!
-    @IBOutlet weak var user: UILabel!
-    var userName: String = ""
+    @IBOutlet weak var nameLabel: UILabel!
+    var user: User!
     var pickerData:[String] = []
     var selectedHours = "1"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.pickerView.delegate = self
-        self.pickerView.dataSource = self
-        user.text = ("Hi, ") + userName
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let person = defaults.objectForKey("user") as? NSData {
+            self.user = NSKeyedUnarchiver.unarchiveObjectWithData(person) as! User
+            nameLabel.text = "Let's log your hours \(user.first_name)!"
+        }
+        
         navigationItem.title = "Log"
         for x in 0..<24 {
             pickerData.insert("\(x+1)", atIndex: x)
         }
+        self.pickerView.delegate = self
+        self.pickerView.dataSource = self
     }
     
     override func didReceiveMemoryWarning() {

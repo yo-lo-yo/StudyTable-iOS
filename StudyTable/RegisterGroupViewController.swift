@@ -10,21 +10,27 @@ import UIKit
 
 class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
     
-    
     @IBOutlet weak var userNameLabel: UILabel!
 
-    @IBOutlet weak var searchInput: UITextField!
+    @IBOutlet weak var groupNameTextField: UITextField!
     
     var searchInputText: String?
     
-    var userName: String?
+    var user: User!
     
     var groups = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameLabel.text = "Let's get you registered \(userName!)"
-        searchInput.delegate = self
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if let person = defaults.objectForKey("user") as? NSData {
+            self.user = NSKeyedUnarchiver.unarchiveObjectWithData(person) as! User
+            userNameLabel.text = "Let's get you registered \(user.first_name!)"
+        }
+        
+        groupNameTextField.delegate = self
         navigationItem.title = "Register Group"
     }
     
@@ -45,12 +51,11 @@ class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func createNewGroup(sender: UIButton) {
+        performSegueWithIdentifier("createGroup", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if("createGroup" == segue.identifier) {
-            
-        } else if("searchGroups" == segue.identifier) {
+        if("searchGroups" == segue.identifier) {
             let groupSearchResultsVC = segue.destinationViewController as! GroupSearchResultsViewController
             getGroupsFromAPI()
             groupSearchResultsVC.groups = self.groups

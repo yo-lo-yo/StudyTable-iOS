@@ -14,6 +14,8 @@
 		17D387FA1CA1F97000CF6144 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 17D387F91CA1F96F00CF6144 /* FacebookSDKStrings.bundle */; };
 		17D387FC1CA61B5100CF6144 /* GroupSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */; };
 		17D387FE1CA61C2D00CF6144 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */; };
+		17D388021CACC36700CF6144 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D388011CACC36700CF6144 /* CreateGroupViewController.swift */; };
+		17D388051CACC60000CF6144 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D388041CACC60000CF6144 /* User.swift */; };
 		1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC61C991518008D6223 /* AppDelegate.swift */; };
 		1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC81C991518008D6223 /* LoginViewController.swift */; };
 		1C045ACC1C991518008D6223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACA1C991518008D6223 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		17D387F91CA1F96F00CF6144 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKStrings.bundle; path = "FacebookSDKs-iOS-20160316/FacebookSDKStrings.bundle"; sourceTree = "<group>"; };
 		17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSearchResultsViewController.swift; sourceTree = "<group>"; };
 		17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
+		17D388011CACC36700CF6144 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		17D388041CACC60000CF6144 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1C045AC31C991518008D6223 /* StudyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C045AC61C991518008D6223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C045AC81C991518008D6223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17D388031CACC5B800CF6144 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C3B9C931CAA3C2500A91CF3 /* Group.swift */,
+				17D388041CACC60000CF6144 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1C045ABA1C991518008D6223 = {
 			isa = PBXGroup;
 			children = (
@@ -132,11 +145,11 @@
 			children = (
 				1C3B9C8D1CAA2A1D00A91CF3 /* ViewControllers */,
 				1C3B9C901CAA2A4B00A91CF3 /* TableViewCells */,
+				17D388031CACC5B800CF6144 /* Model */,
 				1C045AC61C991518008D6223 /* AppDelegate.swift */,
 				1C045ACA1C991518008D6223 /* Main.storyboard */,
 				1C045ACD1C991518008D6223 /* Assets.xcassets */,
 				1C045AD21C991518008D6223 /* Info.plist */,
-				1C3B9C931CAA3C2500A91CF3 /* Group.swift */,
 			);
 			path = StudyTable;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 			children = (
 				1C045AC81C991518008D6223 /* LoginViewController.swift */,
 				1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */,
+				17D388011CACC36700CF6144 /* CreateGroupViewController.swift */,
 				17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */,
 				1C3B9C8B1CAA1AA600A91CF3 /* LoggedHoursViewController.swift */,
 				1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */,
@@ -332,8 +346,10 @@
 				1C529F611CA3681B005A51B8 /* GroupDetailViewController.swift in Sources */,
 				1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */,
 				1C3B9C921CAA3B0E00A91CF3 /* ListedGroupsTableViewController.swift in Sources */,
+				17D388051CACC60000CF6144 /* User.swift in Sources */,
 				1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */,
 				1C3B9C8F1CAA2A4000A91CF3 /* GroupMembersTableViewCell.swift in Sources */,
+				17D388021CACC36700CF6144 /* CreateGroupViewController.swift in Sources */,
 				1C3B9C8C1CAA1AA600A91CF3 /* LoggedHoursViewController.swift in Sources */,
 				17D387FC1CA61B5100CF6144 /* GroupSearchResultsViewController.swift in Sources */,
 				1C045B0F1C9B77C3008D6223 /* HourLoggingViewController.swift in Sources */,
