@@ -11,14 +11,10 @@ import UIKit
 class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var userNameLabel: UILabel!
-
     @IBOutlet weak var groupNameTextField: UITextField!
-    
     var searchInputText: String?
-    
     var user: User!
-    
-    var groups = [String]()
+    var groups: [Group]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,10 +55,11 @@ class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
             let groupSearchResultsVC = segue.destinationViewController as! GroupSearchResultsViewController
             getGroupsFromAPI()
             groupSearchResultsVC.groups = self.groups
+            print(groups![0].name)
         }
     }
     
     func getGroupsFromAPI() {
-        groups += ["group1", "group2", "group3", "group4"]
+        groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
     }
 }

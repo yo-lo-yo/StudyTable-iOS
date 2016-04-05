@@ -25,17 +25,23 @@ class CreateGroupViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func createGroupPressed(sender: UIButton) {
-        if nil != groupName {
-            performSegueWithIdentifier("landingScene", sender: self)
+        if let groupName = groupName {
+            if validateGroupName(groupName) {
+                createGroup()
+                performSegueWithIdentifier("landingScene", sender: self)
+            }
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let tabBarVC = segue.destinationViewController as! UITabBarController
+        let landingStoryBoard = UIStoryboard.init(name: "Landing", bundle: nil)
+        let tabBarVC = landingStoryBoard.instantiateInitialViewController() as! UITabBarController
         tabBarVC.tabBar.barTintColor = UIColor.lightGrayColor()
-        tabBarVC.navigationItem.setHidesBackButton(true, animated: true)
         let hoursNavVC = tabBarVC.viewControllers![0] as! UINavigationController
         hoursNavVC.navigationBar.barTintColor = UIColor.lightGrayColor()
+        let window: UIWindow = UIApplication.sharedApplication().keyWindow!
+        window.rootViewController = tabBarVC
+        window.makeKeyAndVisible()
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -46,6 +52,15 @@ class CreateGroupViewController: UIViewController, UITextFieldDelegate {
         if let text = textField.text {
             groupName = text
         }
+    }
+    
+    func validateGroupName(name: String) -> Bool {
+        //API call to check for same named groups
+        return true
+    }
+    
+    func createGroup() {
+        
     }
 
     /*

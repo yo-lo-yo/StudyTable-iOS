@@ -30,6 +30,7 @@
 		1C3B9C961CAA434600A91CF3 /* GroupSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B9C951CAA434600A91CF3 /* GroupSplitViewController.swift */; };
 		1C529F611CA3681B005A51B8 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C529F601CA3681B005A51B8 /* GroupDetailViewController.swift */; };
 		1C529F631CA36D92005A51B8 /* RegisterGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */; };
+		1CED777A1CB34A1E009BAEBD /* Landing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CED77791CB34A1E009BAEBD /* Landing.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		1C3B9C951CAA434600A91CF3 /* GroupSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSplitViewController.swift; sourceTree = "<group>"; };
 		1C529F601CA3681B005A51B8 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterGroupViewController.swift; sourceTree = "<group>"; };
+		1CED77791CB34A1E009BAEBD /* Landing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Landing.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				17D388031CACC5B800CF6144 /* Model */,
 				1C045AC61C991518008D6223 /* AppDelegate.swift */,
 				1C045ACA1C991518008D6223 /* Main.storyboard */,
+				1CED77791CB34A1E009BAEBD /* Landing.storyboard */,
 				1C045ACD1C991518008D6223 /* Assets.xcassets */,
 				1C045AD21C991518008D6223 /* Info.plist */,
 			);
@@ -315,6 +318,7 @@
 			files = (
 				17D387FA1CA1F97000CF6144 /* FacebookSDKStrings.bundle in Resources */,
 				1C045ACE1C991518008D6223 /* Assets.xcassets in Resources */,
+				1CED777A1CB34A1E009BAEBD /* Landing.storyboard in Resources */,
 				1C045ACC1C991518008D6223 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

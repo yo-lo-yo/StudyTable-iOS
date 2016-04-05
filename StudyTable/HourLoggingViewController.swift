@@ -16,15 +16,16 @@ class HourLoggingViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var user: User!
     var pickerData:[String] = []
     var selectedHours = "1"
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        
         if let person = defaults.objectForKey("user") as? NSData {
             self.user = NSKeyedUnarchiver.unarchiveObjectWithData(person) as! User
-            nameLabel.text = "Let's log your hours \(user.first_name)!"
+            if let name = user.first_name {
+                nameLabel.text = "Let's log your hours \(name)!"
+            }
         }
         
         navigationItem.title = "Log"

@@ -9,8 +9,6 @@
 import UIKit
 
 class LoggedHoursViewController: UIViewController {
-
-    var name: String?
     
     override func viewWillAppear(animated: Bool) {
         

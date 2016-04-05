@@ -55,12 +55,9 @@ class ListedGroupsTableViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if("viewSelectedGroup" == segue.identifier) {
-            if let group = self.selectedGroup {
-                let groupDetailNavVC = segue.destinationViewController as! UINavigationController
-                let groupVC = groupDetailNavVC.topViewController as! GroupDetailViewController
-                groupVC.inputGroupImage = group.image
-                groupVC.groupMemberNames = group.members
-                groupVC.inputGroupName = group.name
+            if let group = selectedGroup {
+                let groupVC = segue.destinationViewController as! GroupDetailViewController
+                groupVC.group = group
             }
         }
     }

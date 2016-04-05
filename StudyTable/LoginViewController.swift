@@ -53,12 +53,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "landingScene") {
-            let tabBarVC = segue.destinationViewController as! UITabBarController
+            let landingStoryBoard = UIStoryboard.init(name: "Landing", bundle: nil)
+            let tabBarVC = landingStoryBoard.instantiateInitialViewController() as! UITabBarController
             tabBarVC.tabBar.barTintColor = UIColor.lightGrayColor()
             let hoursNavVC = tabBarVC.viewControllers![0] as! UINavigationController
             hoursNavVC.navigationBar.barTintColor = UIColor.lightGrayColor()
-
-
         } else if(segue.identifier == "registerGroup") {
         
         } else {
@@ -91,13 +90,12 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
         
-        if nil == groups {
-            let encodedGroup = NSKeyedArchiver.archivedDataWithRootObject(groups!)
+        if let groups = groups {
+            let encodedGroup = NSKeyedArchiver.archivedDataWithRootObject(groups)
             defaults.setObject(encodedGroup, forKey: "groups")
-            
-            self.performSegueWithIdentifier("registerGroup", sender: self)
-        } else {
             self.performSegueWithIdentifier("landingScene", sender: self)
+        } else {
+            self.performSegueWithIdentifier("registerGroup", sender: self)
         }
     }
 
