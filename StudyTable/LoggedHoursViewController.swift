@@ -16,6 +16,7 @@ class LoggedHoursViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +24,7 @@ class LoggedHoursViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func logButtonPressed(sender: AnyObject) {
         performSegueWithIdentifier("logHours", sender: self)
     }

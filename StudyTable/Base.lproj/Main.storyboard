@@ -148,11 +148,11 @@
                         <viewControllerLayoutGuide type="bottom" id="s28-eD-xxb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zuj-zs-uUW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efE-n4-MZt">
-                                <rect key="frame" x="249" y="122" width="102" height="21"/>
+                                <rect key="frame" x="249" y="58" width="102" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="Ext-MA-Zwe"/>
                                     <constraint firstAttribute="width" constant="102" id="cEm-4p-L0l"/>
@@ -170,7 +170,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ry-nY-Cn7">
-                                <rect key="frame" x="277" y="206" width="46" height="30"/>
+                                <rect key="frame" x="277" y="142" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="8NL-Nu-iyt"/>
                                     <constraint firstAttribute="height" constant="30" id="Wee-5F-eFn"/>
@@ -181,7 +181,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ykj-pI-TlA">
-                                <rect key="frame" x="183" y="159" width="235" height="30"/>
+                                <rect key="frame" x="183" y="95" width="235" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HcX-F6-3ol"/>
                                     <constraint firstAttribute="width" constant="328" id="KSh-d5-6e0"/>
@@ -254,17 +254,17 @@
                         <viewControllerLayoutGuide type="bottom" id="Vhl-Eh-Ro7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IBq-9w-6hU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Y6-eh-GkT">
-                                <rect key="frame" x="20" y="91" width="560" height="21"/>
+                                <rect key="frame" x="20" y="27" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your group's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zp-lK-2B8">
-                                <rect key="frame" x="207" y="122" width="187" height="21"/>
+                                <rect key="frame" x="207" y="58" width="187" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="294" id="1ZU-uy-jzi"/>
                                     <constraint firstAttribute="height" constant="21" id="EJo-ef-rK7"/>
@@ -280,7 +280,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-rU-PGt">
-                                <rect key="frame" x="276" y="206" width="48" height="30"/>
+                                <rect key="frame" x="276" y="142" width="48" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Pvn-or-5wo"/>
                                     <constraint firstAttribute="width" constant="60" id="smx-pK-KOB"/>
@@ -297,7 +297,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8t-Ht-uAW">
-                                <rect key="frame" x="237" y="277" width="127" height="30"/>
+                                <rect key="frame" x="237" y="213" width="127" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oWZ-0s-dEl"/>
                                     <constraint firstAttribute="width" constant="138" id="oXe-f7-5F8"/>
@@ -314,7 +314,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Group Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4JJ-tc-FTg">
-                                <rect key="frame" x="183" y="159" width="235" height="30"/>
+                                <rect key="frame" x="183" y="95" width="235" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="1XK-IT-jWK"/>
                                     <constraint firstAttribute="width" constant="285" id="GyI-Ly-Efl"/>
@@ -387,12 +387,12 @@
             <objects>
                 <tableViewController id="4EG-4U-m4v" customClass="GroupSearchResultsViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="106" sectionHeaderHeight="28" sectionFooterHeight="28" id="yDs-24-CXx">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupTableViewCell" rowHeight="106" id="3G8-LZ-Bed" customClass="GroupTableViewCell" customModule="StudyTable" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="106"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="106"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3G8-LZ-Bed" id="xS9-Nh-kFQ">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="105"/>
@@ -433,9 +433,10 @@
         <scene sceneID="UmT-It-PTN">
             <objects>
                 <navigationController id="fkh-Pq-dGz" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tsl-RD-5h1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Tsl-RD-5h1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.27450980390000002" green="0.2784313725" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="8wC-MJ-9Gs" kind="relationship" relationship="rootViewController" id="Uu7-VG-MlU"/>
@@ -454,11 +455,11 @@
                         <viewControllerLayoutGuide type="bottom" id="gfM-ds-dlc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="p1c-rl-Qxm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rv4-N5-gCg">
-                                <rect key="frame" x="20" y="64" width="156" height="149"/>
+                                <rect key="frame" x="20" y="0.0" width="156" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="156" id="3r0-gU-oiT"/>
                                     <constraint firstAttribute="width" constant="289" id="IN4-pC-VO1"/>
@@ -470,14 +471,14 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="IN4-pC-VO1"/>
-                                        <exclude reference="cIY-LA-GfJ"/>
                                         <exclude reference="PmK-lT-Z1U"/>
+                                        <exclude reference="cIY-LA-GfJ"/>
                                         <exclude reference="kmJ-2h-kQj"/>
                                     </mask>
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fJn-gL-dpk">
-                                <rect key="frame" x="207" y="128" width="373" height="21"/>
+                                <rect key="frame" x="207" y="64" width="373" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Gml-Sb-PQM"/>
                                     <constraint firstAttribute="width" constant="226" id="Kzn-zM-WI7"/>
@@ -489,15 +490,15 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="mXH-yg-tbU"/>
                                         <exclude reference="Gml-Sb-PQM"/>
                                         <exclude reference="Kzn-zM-WI7"/>
                                         <exclude reference="Nmc-GN-847"/>
+                                        <exclude reference="mXH-yg-tbU"/>
                                     </mask>
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ACA-wS-YSB">
-                                <rect key="frame" x="20" y="270" width="560" height="330"/>
+                                <rect key="frame" x="20" y="206" width="560" height="330"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupMembersTableViewCell" id="5Ir-hk-b7x" customClass="GroupMembersTableViewCell" customModule="StudyTable" customModuleProvider="target">
@@ -528,7 +529,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8h-No-jSg">
-                                <rect key="frame" x="263" y="232" width="74" height="21"/>
+                                <rect key="frame" x="263" y="168" width="74" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="OyO-34-Pu6"/>
                                     <constraint firstAttribute="height" constant="21" id="Q3w-bX-ksw"/>
@@ -540,13 +541,13 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="m7x-Pn-Kub"/>
                                         <exclude reference="OyO-34-Pu6"/>
+                                        <exclude reference="m7x-Pn-Kub"/>
                                     </mask>
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FT4-Au-PGN">
-                                <rect key="frame" x="20" y="261" width="560" height="1"/>
+                                <rect key="frame" x="20" y="197" width="560" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="KwH-1y-s77"/>
@@ -606,39 +607,39 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="JOK-df-MLm"/>
                                 <exclude reference="6YS-0y-drR"/>
+                                <exclude reference="JOK-df-MLm"/>
                                 <exclude reference="P3s-Gw-Jme"/>
                                 <exclude reference="e3N-fP-115"/>
+                                <exclude reference="KpW-5C-qnS"/>
                                 <exclude reference="Loh-Lm-74w"/>
-                                <exclude reference="daG-qd-jhD"/>
                                 <exclude reference="Q9E-Pn-KEI"/>
                                 <exclude reference="Xmo-3m-Ix0"/>
-                                <exclude reference="KpW-5C-qnS"/>
+                                <exclude reference="daG-qd-jhD"/>
                                 <exclude reference="oeT-Ey-1eu"/>
                                 <exclude reference="usp-JP-r1g"/>
-                                <exclude reference="Mll-QD-ADM"/>
-                                <exclude reference="osU-LM-A9S"/>
-                                <exclude reference="d3t-fD-81E"/>
-                                <exclude reference="Dj9-Mw-VZH"/>
-                                <exclude reference="wM1-LH-k9h"/>
-                                <exclude reference="kWd-qQ-cdL"/>
-                                <exclude reference="ijc-OV-GPa"/>
-                                <exclude reference="dgY-at-WU2"/>
-                                <exclude reference="Chj-jp-dey"/>
                                 <exclude reference="0k6-6o-KDi"/>
-                                <exclude reference="fIP-lx-rp2"/>
                                 <exclude reference="75O-aR-yfd"/>
-                                <exclude reference="IZo-yb-euZ"/>
+                                <exclude reference="Chj-jp-dey"/>
                                 <exclude reference="Ctt-9n-HbM"/>
-                                <exclude reference="tgK-3b-P0d"/>
-                                <exclude reference="U2A-X8-k7q"/>
+                                <exclude reference="IZo-yb-euZ"/>
                                 <exclude reference="J2G-dr-W8f"/>
-                                <exclude reference="glp-by-P9L"/>
-                                <exclude reference="fXF-GC-Ozb"/>
+                                <exclude reference="U2A-X8-k7q"/>
+                                <exclude reference="dgY-at-WU2"/>
+                                <exclude reference="fIP-lx-rp2"/>
+                                <exclude reference="ijc-OV-GPa"/>
+                                <exclude reference="kWd-qQ-cdL"/>
+                                <exclude reference="tgK-3b-P0d"/>
+                                <exclude reference="wM1-LH-k9h"/>
+                                <exclude reference="Dj9-Mw-VZH"/>
+                                <exclude reference="Mll-QD-ADM"/>
+                                <exclude reference="d3t-fD-81E"/>
+                                <exclude reference="osU-LM-A9S"/>
                                 <exclude reference="S1x-kV-amM"/>
-                                <exclude reference="vhd-AD-vTt"/>
+                                <exclude reference="fXF-GC-Ozb"/>
+                                <exclude reference="glp-by-P9L"/>
                                 <exclude reference="QRb-R2-IVf"/>
+                                <exclude reference="vhd-AD-vTt"/>
                             </mask>
                         </variation>
                     </view>

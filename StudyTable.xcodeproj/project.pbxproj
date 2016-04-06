@@ -16,6 +16,8 @@
 		17D387FE1CA61C2D00CF6144 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */; };
 		17D388021CACC36700CF6144 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D388011CACC36700CF6144 /* CreateGroupViewController.swift */; };
 		17D388051CACC60000CF6144 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D388041CACC60000CF6144 /* User.swift */; };
+		17FC84951CB4AAE4004EDA5F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC84941CB4AAE4004EDA5F /* UIColorExtension.swift */; };
+		17FC84991CB4ACC6004EDA5F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC84981CB4ACC5004EDA5F /* Constants.swift */; };
 		1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC61C991518008D6223 /* AppDelegate.swift */; };
 		1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC81C991518008D6223 /* LoginViewController.swift */; };
 		1C045ACC1C991518008D6223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACA1C991518008D6223 /* Main.storyboard */; };
@@ -60,6 +62,8 @@
 		17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		17D388011CACC36700CF6144 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		17D388041CACC60000CF6144 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		17FC84941CB4AAE4004EDA5F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		17FC84981CB4ACC5004EDA5F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1C045AC31C991518008D6223 /* StudyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C045AC61C991518008D6223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C045AC81C991518008D6223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 				1CED77791CB34A1E009BAEBD /* Landing.storyboard */,
 				1C045ACD1C991518008D6223 /* Assets.xcassets */,
 				1C045AD21C991518008D6223 /* Info.plist */,
+				17FC84941CB4AAE4004EDA5F /* UIColorExtension.swift */,
+				17FC84981CB4ACC5004EDA5F /* Constants.swift */,
 			);
 			path = StudyTable;
 			sourceTree = "<group>";
@@ -274,12 +280,13 @@
 		1C045ABB1C991518008D6223 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Jordan Leeper";
 				TargetAttributes = {
 					1C045AC21C991518008D6223 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = HFGM3MHVZT;
 					};
 					1C045AD61C991518008D6223 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -346,7 +353,9 @@
 			files = (
 				1C3B9C941CAA3C2500A91CF3 /* Group.swift in Sources */,
 				1C3B9C961CAA434600A91CF3 /* GroupSplitViewController.swift in Sources */,
+				17FC84951CB4AAE4004EDA5F /* UIColorExtension.swift in Sources */,
 				17D387FE1CA61C2D00CF6144 /* GroupTableViewCell.swift in Sources */,
+				17FC84991CB4ACC6004EDA5F /* Constants.swift in Sources */,
 				1C529F611CA3681B005A51B8 /* GroupDetailViewController.swift in Sources */,
 				1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */,
 				1C3B9C921CAA3B0E00A91CF3 /* ListedGroupsTableViewController.swift in Sources */,
@@ -492,6 +501,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FacebookSDKs-iOS-20160316",
@@ -500,6 +511,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leep.StudyTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -508,6 +520,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/FacebookSDKs-iOS-20160316",

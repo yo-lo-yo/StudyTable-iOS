@@ -53,11 +53,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "landingScene") {
-            let landingStoryBoard = UIStoryboard.init(name: "Landing", bundle: nil)
-            let tabBarVC = landingStoryBoard.instantiateInitialViewController() as! UITabBarController
-            tabBarVC.tabBar.barTintColor = UIColor.lightGrayColor()
-            let hoursNavVC = tabBarVC.viewControllers![0] as! UINavigationController
-            hoursNavVC.navigationBar.barTintColor = UIColor.lightGrayColor()
+            
+            
         } else if(segue.identifier == "registerGroup") {
         
         } else {
@@ -76,7 +73,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 
                 let encodedUser = NSKeyedArchiver.archivedDataWithRootObject(self.user!)
                 (self.defaults.setObject(encodedUser, forKey: "user"))
-                
                 self.getUserAccount()
             } else {
                 print("Unable to retrieve user")
