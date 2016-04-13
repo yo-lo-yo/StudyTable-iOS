@@ -52,7 +52,7 @@ class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if("searchGroups" == segue.identifier) {
-            let groupSearchResultsVC = segue.destinationViewController as! GroupSearchResultsViewController
+            let groupSearchResultsVC = segue.destinationViewController as! SearchGroupsViewController
             getGroupsFromAPI()
             groupSearchResultsVC.groups = self.groups
             print(groups![0].name)

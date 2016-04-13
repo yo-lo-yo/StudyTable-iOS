@@ -250,6 +250,10 @@
                                 <exclude reference="G1q-Oa-Oxb"/>
                                 <exclude reference="NiY-gF-k5W"/>
                                 <exclude reference="TY0-8X-HNr"/>
+                                <exclude reference="CzZ-fo-ITi"/>
+                                <exclude reference="RqE-6G-o5F"/>
+                                <exclude reference="d6U-dq-w6j"/>
+                                <exclude reference="ll5-hj-Ohw"/>
                                 <exclude reference="2DN-Dh-4pC"/>
                                 <exclude reference="9Ya-uM-Iz2"/>
                                 <exclude reference="APG-XX-AvE"/>
@@ -257,10 +261,6 @@
                                 <exclude reference="J50-eG-s56"/>
                                 <exclude reference="Xpz-1b-rfx"/>
                                 <exclude reference="ewv-fy-1nF"/>
-                                <exclude reference="CzZ-fo-ITi"/>
-                                <exclude reference="RqE-6G-o5F"/>
-                                <exclude reference="d6U-dq-w6j"/>
-                                <exclude reference="ll5-hj-Ohw"/>
                                 <exclude reference="0PS-fb-dfY"/>
                                 <exclude reference="1zv-5S-fwY"/>
                                 <exclude reference="3Vq-dY-Jna"/>
@@ -360,7 +360,7 @@
         <!--Logged Hours-->
         <scene sceneID="CRi-yz-nHd">
             <objects>
-                <viewController id="VIo-ne-IPu" customClass="LoggedHoursViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VIo-ne-IPu" customClass="LogSummarViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7JZ-hA-WNi"/>
                         <viewControllerLayoutGuide type="bottom" id="VQs-85-ZxU"/>
@@ -461,7 +461,7 @@
         <!--Hours-->
         <scene sceneID="Rfw-vD-WNn">
             <objects>
-                <viewController storyboardIdentifier="userLandingVC" id="QOk-8Z-q3U" customClass="HourLoggingViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="userLandingVC" id="QOk-8Z-q3U" customClass="LogHoursViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q2x-k9-1Tu"/>
                         <viewControllerLayoutGuide type="bottom" id="93H-ae-WNp"/>

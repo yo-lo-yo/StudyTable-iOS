@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17D387FC1CA61B5100CF6144 /* GroupSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */; };
+		17D387FC1CA61B5100CF6144 /* SearchGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FB1CA61B5100CF6144 /* SearchGroupsViewController.swift */; };
 		17D387FE1CA61C2D00CF6144 /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */; };
 		17D388021CACC36700CF6144 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D388011CACC36700CF6144 /* CreateGroupViewController.swift */; };
 		17D388051CACC60000CF6144 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D388041CACC60000CF6144 /* User.swift */; };
@@ -19,8 +19,8 @@
 		1C045ACE1C991518008D6223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACD1C991518008D6223 /* Assets.xcassets */; };
 		1C045ADC1C991518008D6223 /* StudyTableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045ADB1C991518008D6223 /* StudyTableTests.swift */; };
 		1C045AE71C991518008D6223 /* StudyTableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AE61C991518008D6223 /* StudyTableUITests.swift */; };
-		1C045B0F1C9B77C3008D6223 /* HourLoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */; };
-		1C3B9C8C1CAA1AA600A91CF3 /* LoggedHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B9C8B1CAA1AA600A91CF3 /* LoggedHoursViewController.swift */; };
+		1C045B0F1C9B77C3008D6223 /* LogHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045B0E1C9B77C3008D6223 /* LogHoursViewController.swift */; };
+		1C3B9C8C1CAA1AA600A91CF3 /* LogSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B9C8B1CAA1AA600A91CF3 /* LogSummaryViewController.swift */; };
 		1C3B9C8F1CAA2A4000A91CF3 /* GroupMembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B9C8E1CAA2A4000A91CF3 /* GroupMembersTableViewCell.swift */; };
 		1C3B9C921CAA3B0E00A91CF3 /* ListedGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B9C911CAA3B0E00A91CF3 /* ListedGroupsTableViewController.swift */; };
 		1C3B9C941CAA3C2500A91CF3 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3B9C931CAA3C2500A91CF3 /* Group.swift */; };
@@ -49,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupSearchResultsViewController.swift; sourceTree = "<group>"; };
+		17D387FB1CA61B5100CF6144 /* SearchGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchGroupsViewController.swift; sourceTree = "<group>"; };
 		17D387FD1CA61C2D00CF6144 /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		17D388011CACC36700CF6144 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		17D388041CACC60000CF6144 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 		1C045AE21C991518008D6223 /* StudyTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C045AE61C991518008D6223 /* StudyTableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyTableUITests.swift; sourceTree = "<group>"; };
 		1C045AE81C991518008D6223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourLoggingViewController.swift; sourceTree = "<group>"; };
-		1C3B9C8B1CAA1AA600A91CF3 /* LoggedHoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedHoursViewController.swift; sourceTree = "<group>"; };
+		1C045B0E1C9B77C3008D6223 /* LogHoursViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogHoursViewController.swift; sourceTree = "<group>"; };
+		1C3B9C8B1CAA1AA600A91CF3 /* LogSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogSummaryViewController.swift; sourceTree = "<group>"; };
 		1C3B9C8E1CAA2A4000A91CF3 /* GroupMembersTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMembersTableViewCell.swift; sourceTree = "<group>"; };
 		1C3B9C911CAA3B0E00A91CF3 /* ListedGroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListedGroupsTableViewController.swift; sourceTree = "<group>"; };
 		1C3B9C931CAA3C2500A91CF3 /* Group.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -187,9 +187,9 @@
 				1C045AC81C991518008D6223 /* LoginViewController.swift */,
 				1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */,
 				17D388011CACC36700CF6144 /* CreateGroupViewController.swift */,
-				17D387FB1CA61B5100CF6144 /* GroupSearchResultsViewController.swift */,
-				1C3B9C8B1CAA1AA600A91CF3 /* LoggedHoursViewController.swift */,
-				1C045B0E1C9B77C3008D6223 /* HourLoggingViewController.swift */,
+				17D387FB1CA61B5100CF6144 /* SearchGroupsViewController.swift */,
+				1C3B9C8B1CAA1AA600A91CF3 /* LogSummaryViewController.swift */,
+				1C045B0E1C9B77C3008D6223 /* LogHoursViewController.swift */,
 				1C3B9C951CAA434600A91CF3 /* GroupSplitViewController.swift */,
 				1C3B9C911CAA3B0E00A91CF3 /* ListedGroupsTableViewController.swift */,
 				1C529F601CA3681B005A51B8 /* GroupDetailViewController.swift */,
@@ -410,9 +410,9 @@
 				1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */,
 				1C3B9C8F1CAA2A4000A91CF3 /* GroupMembersTableViewCell.swift in Sources */,
 				17D388021CACC36700CF6144 /* CreateGroupViewController.swift in Sources */,
-				1C3B9C8C1CAA1AA600A91CF3 /* LoggedHoursViewController.swift in Sources */,
-				17D387FC1CA61B5100CF6144 /* GroupSearchResultsViewController.swift in Sources */,
-				1C045B0F1C9B77C3008D6223 /* HourLoggingViewController.swift in Sources */,
+				1C3B9C8C1CAA1AA600A91CF3 /* LogSummaryViewController.swift in Sources */,
+				17D387FC1CA61B5100CF6144 /* SearchGroupsViewController.swift in Sources */,
+				1C045B0F1C9B77C3008D6223 /* LogHoursViewController.swift in Sources */,
 				1C529F631CA36D92005A51B8 /* RegisterGroupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

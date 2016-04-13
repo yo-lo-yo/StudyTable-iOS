@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HourLoggingViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class LogHoursViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet weak var nameLabel: UILabel!

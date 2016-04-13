@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoggedHoursViewController: UIViewController {
+class LogSummarViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         

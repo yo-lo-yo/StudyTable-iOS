@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GroupSearchResultsViewController: UITableViewController, UINavigationControllerDelegate {
+class SearchGroupsViewController: UITableViewController, UINavigationControllerDelegate {
 
     var groups: [Group]?
     var selectedGroup: Group?

@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKShareKit
 import FBSDKCoreKit
+import Firebase
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
@@ -81,8 +82,20 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func getUserAccount() {
-        //API call to get user data/groups
-        //if user == nil, create user
+        
+        if let id = user!.id {
+            let userRef = Firebase(url: "https://studytable-api.firebaseio.com/users/\(id)")
+            
+            userRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                if snapshot.value is NSNull {
+                    print("No groups for user")
+                    //create user
+                } else {
+                    print(snapshot)
+                    //check for user groups
+                }
+            })
+        }
         
         groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
         
