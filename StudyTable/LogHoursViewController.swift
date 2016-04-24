@@ -6,29 +6,25 @@
 //  Copyright © 2016 Jordan Leeper. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import Firebase
 
 class LogHoursViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
     
     @IBOutlet var pickerView: UIPickerView!
     @IBOutlet weak var nameLabel: UILabel!
-    var user: User!
+    private let ref = Firebase(url: Constants.firebaseRootURL)
     var pickerData:[String] = []
     var selectedHours = "1"
-    let defaults = NSUserDefaults.standardUserDefaults()
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.title = "Log Hours"
+        self.tabBarController?.navigationItem.hidesBackButton = false
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let person = defaults.objectForKey("user") as? NSData {
-            self.user = NSKeyedUnarchiver.unarchiveObjectWithData(person) as! User
-            if let name = user.firstName {
-                nameLabel.text = "Let's log your hours \(name)!"
-            }
-        }
-        
-        navigationItem.title = "Log"
         for x in 0..<24 {
             pickerData.insert("\(x+1)", atIndex: x)
         }
@@ -64,7 +60,12 @@ class LogHoursViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func sendLoggedHours(action: UIAlertAction) {
-        print(selectedHours)
+        let auth = ref.authData
+        let hoursRef = ref.childByAppendingPath("users/\(auth.uid)/hours")
+        if let log = Int(selectedHours) {
+            let hours = ["amount" : log, "date" : FirebaseServerValue.timestamp()]
+            hoursRef.childByAutoId().setValue(hours)
+        }
     }
     
     

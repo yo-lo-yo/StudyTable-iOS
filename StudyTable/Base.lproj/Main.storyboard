@@ -481,7 +481,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Register Group" id="sUl-VD-OjJ"/>
                     <connections>
-                        <outlet property="groupNameTextField" destination="4JJ-tc-FTg" id="Mjz-t3-7JZ"/>
+                        <outlet property="searchField" destination="4JJ-tc-FTg" id="c9b-yb-RUe"/>
                         <segue destination="4EG-4U-m4v" kind="show" identifier="searchGroups" id="AvB-bD-31N"/>
                         <segue destination="cZ6-KI-9CJ" kind="show" identifier="createGroup" id="Q0O-L2-wJ4"/>
                     </connections>

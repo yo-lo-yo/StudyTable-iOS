@@ -41,6 +41,16 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.description == "landingScene" {
+            let landingStoryBoard = UIStoryboard.init(name: "Landing", bundle: nil)
+            let tabBarVC = landingStoryBoard.instantiateInitialViewController() as! UITabBarController
+            let window: UIWindow = UIApplication.sharedApplication().keyWindow!
+            window.rootViewController = tabBarVC
+            window.makeKeyAndVisible()
+        }
+    }
+    
     @IBAction func login(sender: UIButton) {
         ref.authUser(emailTextField.text, password: passwordTextField.text) { (error, auth) in
             if error == nil {
@@ -53,50 +63,19 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func register(sender: UIButton) {
-        performSegueWithIdentifier("registerUser", sender: self)
-    }
-    
-    
-    func getUserData(data: FAuthData) {
-        let uidArray = data.uid.componentsSeparatedByString(":")
-        let uid = uidArray[1]
-        
-        let userRef = ref.childByAppendingPath("users/\(uid)")
-
-        userRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-            if snapshot.value is NSNull {
-                print("No user exists")
-                //create user
-            } else {
-                let groupRef = userRef.childByAppendingPath("/groups")
-                groupRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-                    if snapshot.value is NSNull {
-                        print("no groups found")
-                        self.performSegueWithIdentifier("registerGroup", sender: self)
-                    } else {
-                        print("outside for loop")
-                        
-                        for group in snapshot.children.allObjects {
-                            let groupDataRef = self.ref.childByAppendingPath("/groups/\(group.key)")
-//                            groupDataRef.observeSingleEventOfType(.Value, withBlock: {snapshot in
-////                                if snapshot.value is NSNull {
-////                                    print("didn't get group info")
-////                                } else {
-////                                    self.groups.append(Group(name: snapshot.value.objectForKey("groupName")! as! String, image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith"]))
-////                                    print(snapshot.value.objectForKey("groupName"))
-////                                }
-//                            })
-                        }
-                        
-                        self.performSegueWithIdentifier("landingScene", sender: self)
+        ref.childByAppendingPath("groups/").queryOrderedByChild("groupName").observeSingleEventOfType(.Value, withBlock: { snapshot in
+            var groupNames = [String()]
+            
+            if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+                for snap in snapshots {
+                    if let group = snap.value as? Dictionary<String, String> {
+                        print("*** \(group)")
                     }
-                })
+                }
             }
         })
-        
-        //groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
+        performSegueWithIdentifier("registerUser", sender: self)
         
     }
-
 }
 

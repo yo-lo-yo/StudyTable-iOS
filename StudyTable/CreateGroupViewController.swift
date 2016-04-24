@@ -36,9 +36,6 @@ class CreateGroupViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let landingStoryBoard = UIStoryboard.init(name: "Landing", bundle: nil)
         let tabBarVC = landingStoryBoard.instantiateInitialViewController() as! UITabBarController
-        tabBarVC.tabBar.barTintColor = UIColor.lightGrayColor()
-        let hoursNavVC = tabBarVC.viewControllers![0] as! UINavigationController
-        hoursNavVC.navigationBar.barTintColor = UIColor.lightGrayColor()
         let window: UIWindow = UIApplication.sharedApplication().keyWindow!
         window.rootViewController = tabBarVC
         window.makeKeyAndVisible()
