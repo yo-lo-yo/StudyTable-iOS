@@ -84,16 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-StudyTable/Bolts.framework"
-  install_framework "Pods-StudyTable/FBSDKCoreKit.framework"
-  install_framework "Pods-StudyTable/FBSDKLoginKit.framework"
-  install_framework "Pods-StudyTable/FBSDKShareKit.framework"
   install_framework "Pods-StudyTable/Firebase.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-StudyTable/Bolts.framework"
-  install_framework "Pods-StudyTable/FBSDKCoreKit.framework"
-  install_framework "Pods-StudyTable/FBSDKLoginKit.framework"
-  install_framework "Pods-StudyTable/FBSDKShareKit.framework"
   install_framework "Pods-StudyTable/Firebase.framework"
 fi

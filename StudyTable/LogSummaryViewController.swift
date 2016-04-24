@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogSummarViewController: UIViewController {
+class LogSummaryViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
@@ -16,7 +16,8 @@ class LogSummarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem
+        tabBarItem.image = UIImage(named: "hours")
+        tabBarItem.selectedImage = UIImage(named: "hoursSelected")
         // Do any additional setup after loading the view.
     }
 

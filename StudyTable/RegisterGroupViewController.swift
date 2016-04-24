@@ -23,7 +23,7 @@ class RegisterGroupViewController: UIViewController, UITextFieldDelegate {
         
         if let person = defaults.objectForKey("user") as? NSData {
             self.user = NSKeyedUnarchiver.unarchiveObjectWithData(person) as! User
-            userNameLabel.text = "Let's get you registered \(user.first_name!)"
+            userNameLabel.text = "Let's get you registered \(user.firstName!)"
         }
         
         groupNameTextField.delegate = self

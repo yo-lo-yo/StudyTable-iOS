@@ -23,7 +23,7 @@ class LogHoursViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
         if let person = defaults.objectForKey("user") as? NSData {
             self.user = NSKeyedUnarchiver.unarchiveObjectWithData(person) as! User
-            if let name = user.first_name {
+            if let name = user.firstName {
                 nameLabel.text = "Let's log your hours \(name)!"
             }
         }

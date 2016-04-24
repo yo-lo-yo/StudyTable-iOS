@@ -75,7 +75,7 @@
         <scene sceneID="tWA-Is-n0A">
             <objects>
                 <splitViewController id="TcA-rK-xgD" customClass="GroupSplitViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Mev-rR-Pjt"/>
+                    <tabBarItem key="tabBarItem" id="Mev-rR-Pjt"/>
                     <connections>
                         <segue destination="18R-Mq-k9b" kind="relationship" relationship="masterViewController" id="0YA-m9-tbE"/>
                         <segue destination="Rrl-GB-pBH" kind="relationship" relationship="detailViewController" id="1FQ-Gg-xd5"/>
@@ -98,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IKY-6J-JGZ">
-                                <rect key="frame" x="20" y="64" width="156" height="149"/>
+                                <rect key="frame" x="20" y="20" width="156" height="149"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="CVy-Rr-5HM"/>
                                     <constraint firstAttribute="height" constant="128" id="Fll-kF-LIG"/>
@@ -117,7 +117,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aP8-aA-zXl">
-                                <rect key="frame" x="186" y="128" width="394" height="21"/>
+                                <rect key="frame" x="186" y="84" width="394" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="BBE-D9-RyB"/>
                                     <constraint firstAttribute="width" constant="560" id="GZN-l1-obm"/>
@@ -137,7 +137,7 @@
                                 </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="udK-eZ-Lit">
-                                <rect key="frame" x="20" y="270" width="560" height="281"/>
+                                <rect key="frame" x="20" y="226" width="560" height="325"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupMembersTableViewCell" id="Te2-YO-1UY" customClass="GroupMembersTableViewCell" customModule="StudyTable" customModuleProvider="target">
@@ -168,7 +168,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-fC-yho">
-                                <rect key="frame" x="263" y="232" width="74" height="21"/>
+                                <rect key="frame" x="263" y="188" width="74" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="KiQ-hl-KEf"/>
                                     <constraint firstAttribute="width" constant="74" id="PQB-j2-6sT"/>
@@ -186,7 +186,7 @@
                                 </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dB-J8-IWT">
-                                <rect key="frame" x="20" y="261" width="560" height="1"/>
+                                <rect key="frame" x="20" y="217" width="560" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="qA7-RQ-tnD"/>
@@ -307,7 +307,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="8jk-HG-Hxi"/>
+                    <tabBarItem key="tabBarItem" id="8jk-HG-Hxi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDq-ls-6fz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,7 +323,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.27450980390000002" green="0.2784313725" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
@@ -340,7 +339,7 @@
         <scene sceneID="I0M-rZ-IxD">
             <objects>
                 <navigationController id="3pZ-4n-Lju" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="bookmarks" id="zOG-Vb-XVg"/>
+                    <tabBarItem key="tabBarItem" id="zOG-Vb-XVg"/>
                     <navigationBar key="navigationBar" opaque="NO" contentMode="scaleToFill" translucent="NO" id="ynC-Su-Nui">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -360,7 +359,7 @@
         <!--Logged Hours-->
         <scene sceneID="CRi-yz-nHd">
             <objects>
-                <viewController id="VIo-ne-IPu" customClass="LogSummarViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VIo-ne-IPu" customClass="LogSummaryViewController" customModule="StudyTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7JZ-hA-WNi"/>
                         <viewControllerLayoutGuide type="bottom" id="VQs-85-ZxU"/>
@@ -638,6 +637,6 @@
         <image name="default" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e76-LN-GUC"/>
+        <segue reference="1FQ-Gg-xd5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,28 +11,32 @@ import Foundation
 class User: NSObject, NSCoding {
     
     var id: String?
-    var first_name: String?
-    var last_name: String?
+    var firstName: String?
+    var lastName: String?
     var email: String?
     
-    init(id: String, first_name: String, last_name: String, email: String) {
+    init(id: String, firstName: String, lastName: String, email: String) {
         self.id = id
-        self.first_name = first_name
-        self.last_name = last_name
+        self.firstName = firstName
+        self.lastName = lastName
         self.email = email
     }
     
     required init?(coder aDecoder: NSCoder) {
         id = (aDecoder.decodeObjectForKey("id") as! String)
-        first_name = (aDecoder.decodeObjectForKey("first_name") as! String)
-        last_name = (aDecoder.decodeObjectForKey("last_name") as! String)
+        firstName = (aDecoder.decodeObjectForKey("firstName") as! String)
+        lastName = (aDecoder.decodeObjectForKey("lastName") as! String)
         email = (aDecoder.decodeObjectForKey("email") as! String)
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(id, forKey: "id")
-        aCoder.encodeObject(first_name, forKey: "first_name")
-        aCoder.encodeObject(last_name, forKey: "last_name")
+        aCoder.encodeObject(firstName, forKey: "firstName")
+        aCoder.encodeObject(lastName, forKey: "lastName")
         aCoder.encodeObject(email, forKey: "email")
+    }
+    
+    func asDictionary() -> Dictionary<String, String> {
+        return ["id": id!, "firstName": firstName!, "lastName": lastName!, "email": email!]
     }
 }

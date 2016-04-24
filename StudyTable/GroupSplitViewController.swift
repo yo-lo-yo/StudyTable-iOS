@@ -12,8 +12,9 @@ class GroupSplitViewController: UISplitViewController, UISplitViewControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.delegate = self
+        tabBarItem.image = UIImage(named: "group")
+        tabBarItem.selectedImage = UIImage(named: "groupSelected")
     }
     
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool{

@@ -4,10 +4,6 @@ platform :ios, "9.2"
 use_frameworks!
 
 target 'StudyTable' do
-pod 'Bolts'
-pod 'FBSDKCoreKit'
-pod 'FBSDKShareKit'
-pod 'FBSDKLoginKit'
 pod 'Firebase', '>= 2.5.1'
 end
 

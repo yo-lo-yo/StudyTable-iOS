@@ -7,105 +7,95 @@
 //
 
 import UIKit
-import FBSDKLoginKit
-import FBSDKShareKit
-import FBSDKCoreKit
 import Firebase
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController {
 
-    @IBOutlet weak var fbButton: FBSDKLoginButton!
-    let defaults = NSUserDefaults.standardUserDefaults()
-    var user: User?
-    var groups: [Group]?
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    private let ref = Firebase(url: Constants.firebaseRootURL)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fbButton.readPermissions = ["public_profile",  "email", "user_friends"]
-        fbButton.delegate = self
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = true
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if(nil != FBSDKAccessToken.currentAccessToken()) {
-            fbButton.hidden = true
-            getFacebookUserData()
+        //User is logged in
+        if (ref.authData != nil) {
+            performSegueWithIdentifier("landingScene", sender: self)
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBar.hidden = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if(error == nil) {
-            getFacebookUserData()
-        } else {
-            print("Error logging in.")
-        }
     }
     
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        let loginManager: FBSDKLoginManager = FBSDKLoginManager.init()
-        loginManager.logOut()
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "landingScene") {
-            
-            
-        } else if(segue.identifier == "registerGroup") {
-        
-        } else {
-            print("can't id segue" + segue.identifier!)
-        }
-    }
-    
-    func getFacebookUserData() {
-        FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields": "id, first_name, last_name, email"]).startWithCompletionHandler { (connection, result, error) -> Void in
-            if(error == nil) {
-                let firstName = (result.objectForKey("first_name") as! String)
-                let lastName = (result.objectForKey("last_name") as! String)
-                let id = (result.objectForKey("id") as! String)
-                let email = (result.objectForKey("email") as! String)
-                self.user = User(id: id, first_name: firstName, last_name: lastName, email: email)
-                
-                let encodedUser = NSKeyedArchiver.archivedDataWithRootObject(self.user!)
-                (self.defaults.setObject(encodedUser, forKey: "user"))
-                self.getUserAccount()
+    @IBAction func login(sender: UIButton) {
+        ref.authUser(emailTextField.text, password: passwordTextField.text) { (error, auth) in
+            if error == nil {
+                self.performSegueWithIdentifier("landingScene", sender: self)
             } else {
-                print("Unable to retrieve user")
+                //TODO set error description
+                self.errorLabel.text = error.description
             }
         }
     }
     
-    func getUserAccount() {
+    @IBAction func register(sender: UIButton) {
+        performSegueWithIdentifier("registerUser", sender: self)
+    }
+    
+    
+    func getUserData(data: FAuthData) {
+        let uidArray = data.uid.componentsSeparatedByString(":")
+        let uid = uidArray[1]
         
-        if let id = user!.id {
-            let userRef = Firebase(url: "https://studytable-api.firebaseio.com/users/\(id)")
-            
-            userRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
-                if snapshot.value is NSNull {
-                    print("No groups for user")
-                    //create user
-                } else {
-                    print(snapshot)
-                    //check for user groups
-                }
-            })
-        }
+        let userRef = ref.childByAppendingPath("users/\(uid)")
+
+        userRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            if snapshot.value is NSNull {
+                print("No user exists")
+                //create user
+            } else {
+                let groupRef = userRef.childByAppendingPath("/groups")
+                groupRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+                    if snapshot.value is NSNull {
+                        print("no groups found")
+                        self.performSegueWithIdentifier("registerGroup", sender: self)
+                    } else {
+                        print("outside for loop")
+                        
+                        for group in snapshot.children.allObjects {
+                            let groupDataRef = self.ref.childByAppendingPath("/groups/\(group.key)")
+//                            groupDataRef.observeSingleEventOfType(.Value, withBlock: {snapshot in
+////                                if snapshot.value is NSNull {
+////                                    print("didn't get group info")
+////                                } else {
+////                                    self.groups.append(Group(name: snapshot.value.objectForKey("groupName")! as! String, image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith"]))
+////                                    print(snapshot.value.objectForKey("groupName"))
+////                                }
+//                            })
+                        }
+                        
+                        self.performSegueWithIdentifier("landingScene", sender: self)
+                    }
+                })
+            }
+        })
         
-        groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
+        //groups = [Group(name: "Default Group", image: UIImage(named: "default")!, members: ["John Smith", "Jane Smith", "Jordan Leeper", "Dillon Mulroy", "Andrew Prokop"])]
         
-        if let groups = groups {
-            let encodedGroup = NSKeyedArchiver.archivedDataWithRootObject(groups)
-            defaults.setObject(encodedGroup, forKey: "groups")
-            self.performSegueWithIdentifier("landingScene", sender: self)
-        } else {
-            self.performSegueWithIdentifier("registerGroup", sender: self)
-        }
     }
 
 }

@@ -13,6 +13,7 @@
 		17D388051CACC60000CF6144 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D388041CACC60000CF6144 /* User.swift */; };
 		17FC84951CB4AAE4004EDA5F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC84941CB4AAE4004EDA5F /* UIColorExtension.swift */; };
 		17FC84991CB4ACC6004EDA5F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FC84981CB4ACC5004EDA5F /* Constants.swift */; };
+		17FFB46C1CCC297E004CD9FB /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FFB46B1CCC297E004CD9FB /* RegisterUserViewController.swift */; };
 		1C045AC71C991518008D6223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC61C991518008D6223 /* AppDelegate.swift */; };
 		1C045AC91C991518008D6223 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C045AC81C991518008D6223 /* LoginViewController.swift */; };
 		1C045ACC1C991518008D6223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C045ACA1C991518008D6223 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		17D388041CACC60000CF6144 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17FC84941CB4AAE4004EDA5F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		17FC84981CB4ACC5004EDA5F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		17FFB46B1CCC297E004CD9FB /* RegisterUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		1C045AC31C991518008D6223 /* StudyTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C045AC61C991518008D6223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C045AC81C991518008D6223 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,34 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		17FFB4691CCC28BE004CD9FB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1C045AC81C991518008D6223 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		17FFB46A1CCC28C5004CD9FB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				17FFB46B1CCC297E004CD9FB /* RegisterUserViewController.swift */,
+				1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */,
+				17D388011CACC36700CF6144 /* CreateGroupViewController.swift */,
+				17D387FB1CA61B5100CF6144 /* SearchGroupsViewController.swift */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		17FFB46D1CCC4453004CD9FB /* LogHours */ = {
+			isa = PBXGroup;
+			children = (
+				1C3B9C8B1CAA1AA600A91CF3 /* LogSummaryViewController.swift */,
+				1C045B0E1C9B77C3008D6223 /* LogHoursViewController.swift */,
+			);
+			name = LogHours;
+			sourceTree = "<group>";
+		};
 		1C045ABA1C991518008D6223 = {
 			isa = PBXGroup;
 			children = (
@@ -141,7 +171,10 @@
 		1C045AC51C991518008D6223 /* StudyTable */ = {
 			isa = PBXGroup;
 			children = (
-				1C3B9C8D1CAA2A1D00A91CF3 /* ViewControllers */,
+				17FFB4691CCC28BE004CD9FB /* Login */,
+				17FFB46A1CCC28C5004CD9FB /* Register */,
+				17FFB46D1CCC4453004CD9FB /* LogHours */,
+				1C3B9C8D1CAA2A1D00A91CF3 /* Groups */,
 				1C3B9C901CAA2A4B00A91CF3 /* TableViewCells */,
 				17D388031CACC5B800CF6144 /* Model */,
 				1C045AC61C991518008D6223 /* AppDelegate.swift */,
@@ -181,20 +214,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1C3B9C8D1CAA2A1D00A91CF3 /* ViewControllers */ = {
+		1C3B9C8D1CAA2A1D00A91CF3 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				1C045AC81C991518008D6223 /* LoginViewController.swift */,
-				1C529F621CA36D92005A51B8 /* RegisterGroupViewController.swift */,
-				17D388011CACC36700CF6144 /* CreateGroupViewController.swift */,
-				17D387FB1CA61B5100CF6144 /* SearchGroupsViewController.swift */,
-				1C3B9C8B1CAA1AA600A91CF3 /* LogSummaryViewController.swift */,
-				1C045B0E1C9B77C3008D6223 /* LogHoursViewController.swift */,
 				1C3B9C951CAA434600A91CF3 /* GroupSplitViewController.swift */,
 				1C3B9C911CAA3B0E00A91CF3 /* ListedGroupsTableViewController.swift */,
 				1C529F601CA3681B005A51B8 /* GroupDetailViewController.swift */,
 			);
-			name = ViewControllers;
+			name = Groups;
 			sourceTree = "<group>";
 		};
 		1C3B9C901CAA2A4B00A91CF3 /* TableViewCells */ = {
@@ -414,6 +441,7 @@
 				17D387FC1CA61B5100CF6144 /* SearchGroupsViewController.swift in Sources */,
 				1C045B0F1C9B77C3008D6223 /* LogHoursViewController.swift in Sources */,
 				1C529F631CA36D92005A51B8 /* RegisterGroupViewController.swift in Sources */,
+				17FFB46C1CCC297E004CD9FB /* RegisterUserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

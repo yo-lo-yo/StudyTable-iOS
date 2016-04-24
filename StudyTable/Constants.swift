@@ -16,5 +16,5 @@ class Constants {
     static let tabBarColorRed:Int = 0x5f
     static let tabBarColorGreen:Int = 0xbb
     static let tabBarColorBlue:Int = 0x46
-
+    static let firebaseRootURL = "https://studytable-api.firebaseio.com/"
 }
